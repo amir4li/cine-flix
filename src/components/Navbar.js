@@ -12,7 +12,7 @@ function Navbar() {
         <Stack direction="row" spacing={2}>
             <Button
             color= "inherit"
-            onClick={()=> navigate("/")}
+            onClick={()=> navigate("/cine-flix")}
             >
             Home
             </Button>
