@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cine-flix/static/css/main.ded11895.css",
+    "main.js": "/cine-flix/static/js/main.b738cf22.js",
+    "index.html": "/cine-flix/index.html",
+    "main.ded11895.css.map": "/cine-flix/static/css/main.ded11895.css.map",
+    "main.b738cf22.js.map": "/cine-flix/static/js/main.b738cf22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ded11895.css",
+    "static/js/main.b738cf22.js"
+  ]
+}
