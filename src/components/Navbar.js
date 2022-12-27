@@ -18,9 +18,9 @@ function Navbar() {
             </Button>
             <Button
             color= "inherit"
-            onClick={()=> navigate("/favorites")}
+            onClick={()=> navigate("/watchlist")}
             >
-            Favorites
+            Watchlist
             </Button>
             <Button
             color= "inherit"

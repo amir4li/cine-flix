@@ -42,7 +42,7 @@ function HomePage() {
         }}
         >
             <Typography variant="h6" m={1}>
-                    Your Movie Directory
+                    Search your favorite movies here
             </Typography>
             <Stack width="70%" spacing={2} alignItems="center">
                 <TextField

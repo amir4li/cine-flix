@@ -11,9 +11,10 @@ function MovieList({ movies }) {
             <Grid item
             key={index}
             mx="auto"
-            my={1}
+            my={.5}
+            width="250px"
             >
-            <MovieCard title={movie.Title} image={movie.Poster} />
+            <MovieCard movie={movie} title={movie.Title} image={movie.Poster} />
             </Grid>
         ))
         }

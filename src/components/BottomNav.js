@@ -6,7 +6,7 @@ import {
     BottomNavigation,
     BottomNavigationAction
 } from '@mui/material';
-import { Home, Favorite, Person } from '@mui/icons-material';
+import { Home, Movie, Person } from '@mui/icons-material';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -37,9 +37,24 @@ function Navbar() {
                 backgroundColor: "#000"
                 }}
             >
-                <BottomNavigationAction label="Home" sx={{ color: "#fff" }} icon={<Home color="error" />}/>
-                <BottomNavigationAction label="Favorites" sx={{ color: "#fff" }} icon={<Favorite color="error" />} />
-                <BottomNavigationAction label="Profile" sx={{ color: "#fff" }} icon={<Person color="error" />} />
+                <BottomNavigationAction
+                    onClick={()=> navigate("/cine-flix")}
+                    label="Home"
+                    sx={{ color: "#fff" }}
+                    icon={<Home color="error" />}
+                />
+                <BottomNavigationAction
+                    onClick={()=> navigate("/watchlist")}
+                    label="Watch"
+                    sx={{ color: "#fff" }}
+                    icon={<Movie color="error" />}
+                />
+                <BottomNavigationAction
+                    onClick={()=> navigate("/profile")}
+                    label="Profile"
+                    sx={{ color: "#fff" }}
+                    icon={<Person color="error" />}
+                />
             </BottomNavigation>
         </Stack>
         </Hidden>
