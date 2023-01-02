@@ -35,8 +35,8 @@ function UserForm({ pageType }) {
 
         const savedUser = await savedUserResponse.json();
         console.log(savedUser)
-        onSubmitProps.resetForm();
-
+        
+        // redux
         if (savedUser.token) {
             dispatch(
                 setLogin({
@@ -46,6 +46,7 @@ function UserForm({ pageType }) {
             );           
             navigate("/cine-flix");
         }
+        onSubmitProps.resetForm();
     };
 
     const login = async (values, onSubmitProps)=> {
@@ -57,7 +58,8 @@ function UserForm({ pageType }) {
             }
         );
         const loggedIn = await loggedInResponse.json();
-        onSubmitProps.resetForm();
+
+        //redux
         if (loggedIn) {
             dispatch(
                 setLogin({
@@ -67,6 +69,7 @@ function UserForm({ pageType }) {
             );
             navigate("/cine-flix");
         };
+        onSubmitProps.resetForm();
     };
 
     const handleFormSubmit = async(values, onSubmitProps)=> {

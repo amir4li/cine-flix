@@ -14,7 +14,7 @@ function MovieList({ movies }) {
             my={.5}
             width="200px"
             >
-            <MovieCard movie={movie} title={movie.Title} image={movie.Poster} />
+            <MovieCard movie={movie} />
             </Grid>
         ))
         }

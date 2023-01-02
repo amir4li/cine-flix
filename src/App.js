@@ -23,7 +23,7 @@ function App() {
         <Route path="/cine-flix" element={ <HomePage /> }/>
         <Route path="/watchlist" element={<WatchList /> }/>
         <Route path="/profile" element={<Profile /> }/>
-        <Route path="/:movie-id" element={ <Movie /> }/>
+        <Route path="/movie/:movieId" element={ <Movie /> }/>
         <Route path="/signup" element={ <SignUp /> }/>
         <Route path="/login" element={ <Login /> }/>
       </Routes>

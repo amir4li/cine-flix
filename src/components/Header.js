@@ -1,11 +1,12 @@
 import React,{ useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AppBar, Hidden, Select, Box, Stack, Menu, MenuItem, Typography, Toolbar, Button, FormControl } from '@mui/material';
+import { AppBar, Hidden, Stack, Menu, MenuItem, Typography, Toolbar, Button, Grid } from '@mui/material';
 import { KeyboardArrowDown } from '@mui/icons-material';
 import Navbar from './Navbar';
+import { useSelector } from 'react-redux';
 
 
 function Header() {
+  const user = useSelector((state)=> state.auth.user);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -20,12 +21,11 @@ function Header() {
     return (
       <AppBar sx={{ bgcolor: "#000" }}>
         <Toolbar>        
-        <Stack
-          width="100%"
+        <Grid container
           direction="row"
-          spacing={4}
           justifyContent="space-between"
-        >       
+        >
+          <Grid item sx={6} md={2}>
           <Typography 
             variant="h4"
             sx={{
@@ -36,22 +36,25 @@ function Header() {
           >
             CINEFLIX
           </Typography>
-
+          </Grid>   
+          
           <Hidden mdDown>
-            <Stack sx={{ flexGrow: 1}}>
+          <Grid item md={8}>
             <Navbar />
-            </Stack>             
+          </Grid>            
           </Hidden>
 
-          <Stack sx={{ flexGrow: 1}}>           
+          <Grid item sx={6} md={2}>           
             <Button
-              sx={{ border: "1px solid red", position: "absolute", right: "1rem" }}
+              sx={{ border: "1px solid red" }}
               color= "inherit"
               id= "login-menu"
               endIcon={ <KeyboardArrowDown color="inherit" /> }
               onClick={(e)=> handleClick(e)}
             >
-            Amir Ali
+              <Typography>
+              {user.name}
+              </Typography>             
             </Button>
             <Menu
               id="login-menu"
@@ -68,14 +71,14 @@ function Header() {
               }}
               sx={{
                 width: "250px",
-                height: "75px"
+                height: "75px",
               }}
             >
                 <MenuItem>Log Out</MenuItem>
             </Menu>
-            </Stack>
+            </Grid>
           
-          </Stack>
+          </Grid>
         </Toolbar>
       </AppBar>
     )

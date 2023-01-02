@@ -1,7 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-    Button,
-    Input,
     InputAdornment,
     Stack, TextField, Typography
 } from '@mui/material';
@@ -35,16 +33,17 @@ function HomePage() {
     },[searchValue])
 
     return (
-        <Stack spacing={5}>
-        <Stack
+        <Stack mt={8} spacing={3} >
+        <Stack  spacing={2}
         sx={{
             alignItems: "center",
+            mt: "1rem"
         }}
         >
             <Typography variant="h6" m={1}>
                     Search your favorite movies here
             </Typography>
-            <Stack width="70%" spacing={2} alignItems="center">
+            <Stack width="70%" alignItems="center" >
                 <TextField
                     fullWidth
                     variant="outlined"

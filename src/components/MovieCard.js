@@ -1,7 +1,9 @@
 import React from 'react';
-import { Box, Card, CardMedia, CardActions, Button, Rating, Typography } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
+import { Card, CardMedia } from "@mui/material";
 
-function MovieCard(props) {
+function MovieCard({ movie }) {
+    const navigate = useNavigate();
     return (
         <Card
         sx={{
@@ -10,11 +12,12 @@ function MovieCard(props) {
             cursor: 'pointer',
             my: "1rem"
         }}
+        onClick={()=> navigate(`/movie/${movie.imdbID}`)}
         >
         <CardMedia
             sx={{ height: "300px", bgcolor: "#000"  }}
-            image={props.image}
-            title={props.title}
+            image={movie.Poster}
+            title={movie.Title}
         />
         </Card>
     )
