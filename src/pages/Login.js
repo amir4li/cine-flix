@@ -9,7 +9,8 @@ function Login({ page }) {
         <Box
             width= { isNonMobile ? "70%" : "100%" }
             m="auto"
-            pt={1}
+            p={4} pt={4}
+            mt={8} mb={6}
             textAlign="center"
             bgcolor="#eee"
             borderRadius={2}

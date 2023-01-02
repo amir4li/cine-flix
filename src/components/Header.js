@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 
 
 function Header() {
+
   const user = useSelector((state)=> state.auth.user);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -53,7 +54,7 @@ function Header() {
               onClick={(e)=> handleClick(e)}
             >
               <Typography>
-              {user.name}
+              {user ? user.name : "Login"}
               </Typography>             
             </Button>
             <Menu
