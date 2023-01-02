@@ -45,7 +45,7 @@ function Navbar() {
                 />
                 <BottomNavigationAction
                     onClick={()=> navigate("/watchlist")}
-                    label="Watch"
+                    label="Watchlist"
                     sx={{ color: "#fff" }}
                     icon={<Movie color="error" />}
                 />

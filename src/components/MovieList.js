@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import React, { useEffect } from 'react'
+import React from 'react'
 import MovieCard from './MovieCard';
 
 function MovieList({ movies }) {
@@ -12,7 +12,7 @@ function MovieList({ movies }) {
             key={index}
             mx="auto"
             my={.5}
-            width="250px"
+            width="200px"
             >
             <MovieCard movie={movie} title={movie.Title} image={movie.Poster} />
             </Grid>

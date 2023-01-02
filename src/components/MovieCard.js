@@ -8,6 +8,7 @@ function MovieCard(props) {
             width: "100%",
             bgcolor:"#000",
             cursor: 'pointer',
+            my: "1rem"
         }}
         >
         <CardMedia
@@ -15,13 +16,6 @@ function MovieCard(props) {
             image={props.image}
             title={props.title}
         />
-        <CardActions>
-            <Typography>
-                {props.movie.Rating}
-            </Typography>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-        </CardActions>
         </Card>
     )
 }
