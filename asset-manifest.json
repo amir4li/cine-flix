@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/cine-flix/static/css/main.37689e32.css",
-    "main.js": "/cine-flix/static/js/main.1dbe67e7.js",
+    "main.css": "/cine-flix/static/css/main.43d6a41d.css",
+    "main.js": "/cine-flix/static/js/main.40ce0fa8.js",
+    "static/media/netflix-bg.webp": "/cine-flix/static/media/netflix-bg.58901d5d7c192b3319f8.webp",
     "static/media/roboto-all-500-normal.woff": "/cine-flix/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/cine-flix/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/cine-flix/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -35,11 +36,11 @@
     "static/media/roboto-greek-ext-300-normal.woff2": "/cine-flix/static/media/roboto-greek-ext-300-normal.35b9d6be04b95f0f0530.woff2",
     "static/media/roboto-greek-ext-700-normal.woff2": "/cine-flix/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/cine-flix/index.html",
-    "main.37689e32.css.map": "/cine-flix/static/css/main.37689e32.css.map",
-    "main.1dbe67e7.js.map": "/cine-flix/static/js/main.1dbe67e7.js.map"
+    "main.43d6a41d.css.map": "/cine-flix/static/css/main.43d6a41d.css.map",
+    "main.40ce0fa8.js.map": "/cine-flix/static/js/main.40ce0fa8.js.map"
   },
   "entrypoints": [
-    "static/css/main.37689e32.css",
-    "static/js/main.1dbe67e7.js"
+    "static/css/main.43d6a41d.css",
+    "static/js/main.40ce0fa8.js"
   ]
 }
