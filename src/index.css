@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #000 url("https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.webp");
+  background: #111 url("./assets/img/netflix-bg.webp");
   overflow: auto;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;

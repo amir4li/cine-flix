@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Stack, Card, CardMedia, Typography, Chip, Box, Grid, useMediaQuery } from "@mui/material";
 import { Star, Percent } from '@mui/icons-material';
+import Footer from '../components/Footer';
 
 function Movie() {
-    const isMobileScreen = useMediaQuery("(max-width: 768px)");
     const [movie, setMovie] = useState("");
     const [movieGenre, setMovieGenre] = useState([])
     const { movieId } = useParams();
+    const isMobileScreen = Boolean(useMediaQuery("(max-width: 768px)"));
+    const windowHeight = isMobileScreen ? "100%" : "100vh"
 
     const fetchMovie = async ()=> {
         const response = await fetch(`https://www.omdbapi.com/?apikey=6541fa95&i=${movieId}`)
@@ -25,9 +27,10 @@ function Movie() {
 
     return (
         <Stack
+            height= {windowHeight}
             bgcolor="#111"
-            p={4} pt={4}
-            mt={6} mb={6}
+            p={4}
+            mt={6}
             gap={3}
         >
 
@@ -36,9 +39,9 @@ function Movie() {
                 direction="row"
                 rowSpacing={2}
             >
-                <Grid item xs={12} md={9}>
+                <Grid item xs={12} md={10} pb={1}>
                 <Stack gap={1}>
-                    <Typography variant="h5">
+                    <Typography variant="h4">
                         {movie.Title}
                     </Typography>
                     <Stack direction="row" gap={2} fontSize="0.5rem">
@@ -56,26 +59,26 @@ function Movie() {
                     </Stack>                   
                 </Stack>
                 </Grid>
-                <Grid item xs={12} md={3}>
-                <Stack direction="row" spacing={7}>
+                <Grid item xs={12} md={2}>
+                <Stack direction="row" justifyContent="space-between">
                     <Stack>
                         <Typography variant="body2">
-                            IMDb RATING
+                            IMDb Rating
                         </Typography>
                         <Stack direction="row">
                             <Star sx={{ color: "yellow"}} />
-                            <Typography>
+                            <Typography variant="subtitle1">
                                 {movie.imdbRating}/10
                             </Typography>
                         </Stack>
                     </Stack>
                     <Stack>
                         <Typography variant="body2">
-                            YOUR RATING
+                            Your Rating
                         </Typography>
                         <Stack direction="row">
                             <Star sx={{ color: "yellow"}} />
-                            <Typography>
+                            <Typography variant="subtitle1">
                                 {0}/10
                             </Typography>
                         </Stack>
@@ -87,13 +90,13 @@ function Movie() {
 
             {/* Main body */}
             <Grid container
-                direction="row"
                 rowSpacing={2}
+                columnSpacing={4}
+                pb={8}
             >
                 <Grid item xs={12} md={3}>
                 <Card
                     sx={{
-                        width: "228px",
                         cursor: 'pointer',                       
                     }}
                     >
@@ -106,12 +109,17 @@ function Movie() {
                 </Grid>
                 <Grid xs={12} md={9} item>
                     <Stack>
-                        <Stack direction="row" spacing={2} mb={1}>
+                        <Stack
+                            direction="row"
+                            spacing={2}
+                            mb={1}
+                            sx={{ justifyContent: isMobileScreen ? "center" : "flex-start" }}
+                        >
                         {movieGenre.map((gen, index)=> (
                             <Chip key={index} label={gen} sx={{color: "#fff",border: "2px solid red"}} />
                         ))}
                         </Stack>
-                        <Box pb={1}>
+                        <Box pb={2}>
                         <Typography>{movie.Plot}</Typography>
                         </Box>
                         <Box py={1} borderTop="1px solid #eee">
@@ -135,8 +143,7 @@ function Movie() {
                     </Stack>
                 </Grid>   
             </Grid>
-
-            
+            {!isMobileScreen && <Footer />}
         </Stack>
     )
 }

@@ -1,21 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardMedia } from "@mui/material";
+import { Card, CardMedia, useMediaQuery } from "@mui/material";
 
 function MovieCard({ movie }) {
+    const isNonMobileScreen = Boolean(useMediaQuery("(min-width: 768px)"));
     const navigate = useNavigate();
     return (
         <Card
-        sx={{
-            width: "100%",
-            bgcolor:"#000",
-            cursor: 'pointer',
-            my: "1rem"
-        }}
+            sx={{
+                cursor: 'pointer',
+                width: "90%"
+            }}
         onClick={()=> navigate(`/movie/${movie.imdbID}`)}
         >
         <CardMedia
-            sx={{ height: "300px", bgcolor: "#000"  }}
+            sx={{ height: isNonMobileScreen ? "330px" : "200px" }}
             image={movie.Poster}
             title={movie.Title}
         />

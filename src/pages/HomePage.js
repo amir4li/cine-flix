@@ -5,6 +5,7 @@ import {
 } from '@mui/material';
 import { SearchOutlined } from '@mui/icons-material';
 import MovieList from '../components/MovieList';
+import Footer from '../components/Footer';
 
 
 function HomePage() {
@@ -12,6 +13,7 @@ function HomePage() {
     const [movies, setMovies] = useState(null);
     const [isError, setIsError] = useState(false);
 
+    const darkBg = movies
     const handleChange = (e)=> {
         setSearchValue(e.target.value);       
     };
@@ -33,8 +35,15 @@ function HomePage() {
     },[searchValue])
 
     return (
-        <Stack mt={8} spacing={3} >
-        <Stack  spacing={2}
+        <Stack
+            p={2} pt={4}
+            mt={6}
+            gap={3}
+            sx={{
+                background: movies && "#111"
+            }}
+        >
+        <Stack
         sx={{
             alignItems: "center",
             mt: "1rem"
@@ -46,7 +55,6 @@ function HomePage() {
             <Stack width="70%" alignItems="center" >
                 <TextField
                     fullWidth
-                    variant="outlined"
                     placeholder="Search..."
                     size="small"
                     sx={{
@@ -63,13 +71,14 @@ function HomePage() {
             </Stack>
         </Stack>
 
-        <Stack sx={{ p: "1rem" }}>
+        <Stack>
             {movies && (
             <MovieList movies={movies} isError={isError} />
             )}
             {(isError) && (
                 <Typography m="auto">
                     Sorry! Some internal problem occured.
+                    
                 </Typography>
             )}
         </Stack>

@@ -9,6 +9,7 @@ import Movie from './pages/Movie';
 import WatchList from './pages/WatchList';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import Footer from './components/Footer';
 
 
 function App() {
